@@ -25,7 +25,7 @@
             background-color: rgb(182, 192, 219);
             margin: 0 auto;
             height: 100%;
-            /* display: flex; */
+            margin-top: 40px;
         }
 
         input {
@@ -45,6 +45,14 @@
             background-color: rgb(238, 228, 228);
             color: red;
         }
+        li a{
+            color: rgb(202, 160, 42);
+        }
+        li a:hover {
+            cursor: pointer;
+            background-color: rgb(238, 228, 228);
+            color: red;
+        }
     </style>
 </head>
 
@@ -56,9 +64,33 @@
     </div>
 
 
-<script src="./select.js"></script>
-    <script>
+    <div id="querySele" style="margin-top: 100px;">
+        <input type="text" id="baidu" style="width: 70%;"> <span>搜狗哈哈🌈</span>
+        <ul id="baiduUl" style="background-color: #fff;width: 70%; margin: 0;">
+            
+        </ul>
+    </div>
+   
 
+<div id="script">
+
+</div>
+<script src="./select.js"></script>
+<script>
+    function fe(res){
+            console.log(res)
+            baiduUl
+            let str = ``;
+        if (res.g){
+            res.g.forEach(t => {
+                str += `<li><a href="https://www.baidu.com/s?tn=baidu&wd=${t.q}" target="_blank">${t.q}</a></li>`
+            });
+        }
+        baiduUl.innerHTML = str
+    }
+</script>
+    
+    <script>
         let select = document.querySelector('#select')
         let data = ['呀是否上档次v', 's', 'qwad飞ad', 'ws吗fsaf'];
         let i = 0;
@@ -78,7 +110,23 @@
 
         
     </script>
+<script>
 
+    baidu.oninput = function(e){
+        let value = this.value;
+        console.log(value)
+        let sc = document.createElement('script')
+        sc.src = `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=30969,1443,21094,30998,30823&wd=${value}&cb=fe`
+        sc.hidden = true;
+        script.append(sc);
+        script.innerHTML = '';
+    }
+    baidu.onkeydown = function(e){
+       if (e.keyCode === 13){
+        location.href = `https://www.baidu.com/s?tn=baidu&wd=${e.target.value}`
+       }
+    }
+</script>
 </body>
 
 </html>
