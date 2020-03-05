@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zn">
 
 <head>
     <meta charset="UTF-8">
@@ -30,7 +30,7 @@
 
         input {
             width: 100%;
-            height: 30px;
+            height: 50px;
         }
 
         li {
@@ -78,7 +78,7 @@
 <script src="./select.js"></script>
 <script>
     function fe(res){
-            console.log(res)
+            console.log('res',res)
             baiduUl
             let str = ``;
         if (res.g){
@@ -92,9 +92,9 @@
     
     <script>
         let select = document.querySelector('#select')
-        let data = ['呀是否上档次v', 's', 'qwad飞ad', 'ws吗fsaf'];
+        let data = ['杨', '杨杨', '杨rl', 'yrl','rl',"马","马晓飞",'ma','马飞'];
         let i = 0;
-        while (i <= 200) {
+        while (i <= 50) {
             i++;
             data.push(`${(Math.random()*100).toFixed(3)}`)
         }
@@ -113,8 +113,9 @@
 <script>
 
     baidu.oninput = function(e){
+        console.log(e)
         let value = this.value;
-        console.log(value)
+        // console.log(value)
         let sc = document.createElement('script')
         sc.src = `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=30969,1443,21094,30998,30823&wd=${value}&cb=fe`
         sc.hidden = true;
