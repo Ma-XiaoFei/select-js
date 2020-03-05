@@ -13,6 +13,7 @@ function initSelect(option) {
             return item.includes(val)
         }).forEach(item => {
             let attr = item;
+            if (val === '.') val = '\\.'
             let ignore = option.isSameCase ? "gi" : 'g';
             item = item.replace(new RegExp(`(${val})`, ignore), function (...a) {
                 return `<span style="color:red; font-size: 23px">${a[1]}</span>`
