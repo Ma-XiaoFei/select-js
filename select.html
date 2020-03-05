@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            width: 500px;
+            background-color: rgb(182, 192, 219);
+            margin: 0 auto;
+            height: 100%;
+            /* display: flex; */
+        }
+
+        input {
+            width: 100%;
+            height: 30px;
+        }
+
+        li {
+            /* background-color: #fff; */
+            list-style: none;
+            padding-left: 10px;
+            /* padding: 5px 5px 0 0; */
+        }
+
+        li:hover {
+            cursor: pointer;
+            background-color: rgb(238, 228, 228);
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id='container'>
+        <input type="text" id="input">
+
+    </div>
+
+
+<script src="./select.js"></script>
+    <script>
+
+        let select = document.querySelector('#select')
+        let data = ['呀是否上档次v', 's', 'qwad飞ad', 'ws吗fsaf'];
+        let i = 0;
+        while (i <= 200) {
+            i++;
+            data.push(`${(Math.random()*100).toFixed(3)}`)
+        }
+
+
+
+        initSelect({
+            data,
+            el: '#input',
+            isSameCase: true, // 是否开启大小写转换 , 默认false
+
+        })
+
+        
+    </script>
+
+</body>
+
+</html>
