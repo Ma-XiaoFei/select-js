@@ -24,7 +24,7 @@ function initSelect(option) {
         let Ul = document.createElement('ul');
         Ul.innerHTML = str;
         Ul.id = 'ul'
-        Ul.style.maxHeight = '200px'
+        Ul.style.maxHeight = '400px'
         Ul.style.overflow = 'scroll'
         document.getElementById('ul') ? document.getElementById('ul').remove() : '';
         Ul.onclick = function (e) {
